@@ -1,0 +1,62 @@
+- Move to git.
+    - Study git.
+        - Rebase.
+
+- Test lambdas.
+    - Study Spliterators.
+
+- Test default methods.
+
+- Test NIO.
+
+- Study Arrays.
+
+- Study and test java collections.
+    - Synchronized, unmodifiable, WeakReferenced. (Guava?)
+    - Different algorithms complexities
+    - BitSet
+
+- Study and test java concurrency.
+    - Basic object wait and notify.
+
+- Study GC.
+
+- Learn how are objects layed out in memory.
+ - How is a linked list layed out? An ArrayList? A HashMap? A TreeMap?
+
+- Work with database like Postgres or MySQL.
+    - Create JPA 2.1
+    - Create and Map SP.
+    - Create complex mappings.
+    - Create indexes.
+    - Study and implement queries optimization.
+
+- Implement algorithms from the cracking the code interview book.
+- Study data structures.
+
+- Study Spring
+    - SpringBoot
+        - YAML properties for Spring boot.
+
+- Study out REST with java.
+- Study ActiveMQ everything.
+
+- Study java puzzlers.
+
+- Learn what is new in Java 6/7/8, add here what to study.
+
+- Study CDI.
+
+- Unit testing (Pragmatic)
+
+- Microservices
+- CI/CD
+- PaaS
+- Docker
+- Kubernetes
+- Cassandra
+- MongoDB
+- Hadoop
+
+- Create GWT component from scratch.
+- Test clojure.
