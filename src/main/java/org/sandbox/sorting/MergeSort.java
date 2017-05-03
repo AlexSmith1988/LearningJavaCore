@@ -25,6 +25,7 @@ public class MergeSort {
         System.out.println(IntStream.of(input).boxed().collect(Collectors.toList()));
     }
 
+    // O(n) memory complexity
     private static int[] mergeBuf;
 
     private static void mergeSort(int[] input) {
@@ -42,7 +43,7 @@ public class MergeSort {
             mergeSort(input, from, center);
             mergeSort(input, center + 1, to);
 
-            // O(n)
+            // O(n) for each level of Divide and Conquer, log n levels => O(n log n)
             merge(input, from, center, to);
         }
     }
