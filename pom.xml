@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.sandbox</groupId>
-    <artifactId>LearningJavaCore</artifactId>
+    <artifactId>LearningProgramming</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
@@ -19,6 +19,15 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.truth</groupId>
+            <artifactId>truth</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
