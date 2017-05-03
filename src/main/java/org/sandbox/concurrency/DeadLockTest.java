@@ -22,8 +22,12 @@ public class DeadLockTest {
 //        System.out.println("*" + padRight("Howto", 2) + "*");
 //        System.out.println("*" + padLeft("Howto", 2) + "*");
 
-        test.put(null, "Test");
+        test.put(null, "TestAbstract");
         System.out.println(test.get(null));
 
     }
+}
+
+interface Foo {
+    String test = "asd";
 }
