@@ -1,5 +1,6 @@
 package org.sandbox.sorting;
 
+
 import com.google.common.truth.Truth;
 
 import java.util.Arrays;
@@ -13,7 +14,7 @@ import java.util.stream.IntStream;
 public class MergeSort {
 
     public static void main(String[] args) {
-        int[] input = new Random().ints(20, -50, 50).toArray();
+        int[] input = new Random().ints(2000, -5000, 5000).toArray();
 
         int[] expected = new int[input.length];
         System.arraycopy(input, 0, expected, 0, input.length);
