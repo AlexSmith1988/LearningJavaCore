@@ -2,7 +2,9 @@ package org.sandbox.sorting;
 
 import com.google.common.truth.Truth;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -24,7 +26,8 @@ public class QuickSort {
 //        System.out.println("Qsort input:");
 //        System.out.println(Arrays.toString(input));
 //        System.out.println("Qsort iterations:");
-        quickSort(input, 0, input.length - 1);
+//        quickSort(input, 0, input.length - 1);
+        quickSortLinear(input);
 
         Truth.assertThat(input).isEqualTo(expected);
         System.out.println(IntStream.of(input).boxed().collect(Collectors.toList()));
@@ -36,7 +39,7 @@ public class QuickSort {
             int pivot = elements[to];
 
             int g = from;
-            for (int j = from ; j < to; ++j) {
+            for (int j = from; j < to; ++j) {
                 int element = elements[j];
                 if (element < pivot) {
                     swap(elements, g++, j);
@@ -48,6 +51,45 @@ public class QuickSort {
 
             quickSort(elements, from, g - 1);
             quickSort(elements, g + 1, to);
+        }
+    }
+
+    private static void quickSortLinear(int[] elements) {
+        class QSortTask {
+            final int from;
+            // Inclusive
+            final int to;
+
+            public QSortTask(int from, int to) {
+                this.from = from;
+                this.to = to;
+            }
+
+            boolean needsProcessing() {
+                return from < to;
+            }
+        }
+        Deque<QSortTask> qSortTasks = new ArrayDeque<>();
+        qSortTasks.add(new QSortTask(0, elements.length - 1));
+
+        while (!qSortTasks.isEmpty()) {
+            QSortTask task = qSortTasks.pollFirst();
+
+            if (task.needsProcessing()) {
+                int pivot = elements[task.to];
+
+                int g = task.from;
+                for (int j = task.from; j < task.to; ++j) {
+                    int element = elements[j];
+                    if (element < pivot) {
+                        swap(elements, g++, j);
+                    }
+                }
+                swap(elements, g, task.to);
+
+                qSortTasks.push(new QSortTask(task.from, g - 1));
+                qSortTasks.push(new QSortTask(g + 1, task.to));
+            }
         }
     }
 
